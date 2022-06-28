@@ -1,0 +1,23 @@
+footer.footer {
+  margin-top: 100px;
+  padding: 20px 16px;
+  background-color: $black_color;
+  
+  @media (min-width: 1200px) {
+    margin-top: 140px;
+    padding: 40px 16px;
+  }
+
+  & > .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 80px;
+  
+    @media (min-width: 1200px) {
+      width: 120px;
+    }
+  }
+}

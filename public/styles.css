@@ -1,4 +1,225 @@
 /*!*******************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./styles/main.scss ***!
   \*******************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Literata", serif;
+  font-size: 12px;
+  line-height: 140%;
+  color: #212121;
+}
 
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+@media (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
+
+header.header {
+  padding: 10px 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 1200px) {
+  header.header {
+    padding: 20px 16px;
+  }
+}
+header.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+@media (min-width: 1200px) {
+  header.header > .container {
+    justify-content: flex-start;
+    height: 70px;
+  }
+}
+header.header .logo {
+  width: 80px;
+}
+@media (min-width: 1200px) {
+  header.header .logo {
+    width: 120px;
+  }
+}
+header.header nav.nav {
+  display: none;
+  margin-left: 40px;
+}
+@media (min-width: 1200px) {
+  header.header nav.nav {
+    display: block;
+  }
+}
+header.header nav.nav a {
+  margin-right: 20px;
+  font-family: "Nunito";
+  font-size: 18px;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+header.header nav.nav a:hover {
+  color: #406882;
+}
+header.header .auth-container {
+  display: flex;
+}
+@media (min-width: 1200px) {
+  header.header .auth-container {
+    margin-left: auto;
+  }
+}
+header.header .auth-container a {
+  margin-left: 10px;
+  font-family: "Nunito";
+  font-size: 14px;
+  text-decoration: none;
+}
+@media (min-width: 1200px) {
+  header.header .auth-container a {
+    font-size: 18px;
+  }
+}
+
+button.button,
+a.button {
+  padding: 18px 15px;
+  font-family: "Nunito";
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #406882;
+  border-radius: 15px;
+}
+button.button.reverse,
+a.button.reverse {
+  color: #406882;
+  background-color: #fff;
+  border: 2px solid;
+}
+@media (min-width: 1200px) {
+  button.button,
+a.button {
+    padding: 28px 15px;
+    font-size: 18px;
+  }
+}
+
+footer.footer {
+  margin-top: 100px;
+  padding: 20px 16px;
+  background-color: #212121;
+}
+@media (min-width: 1200px) {
+  footer.footer {
+    margin-top: 140px;
+    padding: 40px 16px;
+  }
+}
+footer.footer > .container {
+  display: flex;
+  justify-content: center;
+}
+footer.footer .logo {
+  width: 80px;
+}
+@media (min-width: 1200px) {
+  footer.footer .logo {
+    width: 120px;
+  }
+}
+
+#home-page header.top-container {
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container {
+    margin-top: 40px;
+  }
+}
+#home-page header.top-container > .container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container > .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+#home-page header.top-container .description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .description {
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+}
+#home-page header.top-container .description h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .description h1 {
+    font-size: 36px;
+  }
+}
+#home-page header.top-container .description p {
+  margin-top: 20px;
+  font-size: 12px;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .description p {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+}
+#home-page header.top-container .description .buttons {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 210px;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .description .buttons {
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    width: 100%;
+  }
+}
+#home-page header.top-container .description .buttons .button {
+  margin-top: 20px;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .description .buttons .button {
+    margin-top: 0;
+    width: 285px;
+  }
+}
+#home-page header.top-container .photo {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  #home-page header.top-container .photo {
+    width: 48%;
+  }
+}

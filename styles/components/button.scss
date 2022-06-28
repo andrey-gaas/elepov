@@ -1,0 +1,22 @@
+button.button,
+a.button {
+  padding: 18px 15px;
+  font-family: 'Nunito';
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #406882;
+  border-radius: 15px;
+
+  &.reverse {
+    color: #406882;
+    background-color: #fff;
+    border: 2px solid;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 28px 15px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,68 @@
+header.header {
+  padding: 10px 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+  
+  @media (min-width: 1200px) {
+    padding: 20px 16px;
+  }
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    @media (min-width: 1200px) {
+      justify-content: flex-start;
+      height: 70px;
+    }
+  }
+
+  .logo {
+    width: 80px;
+
+    @media (min-width: 1200px) {
+      width: 120px;
+    }
+  }
+
+  nav.nav {
+    display: none;
+    margin-left: 40px;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
+
+    a {
+      margin-right: 20px;
+      font-family: 'Nunito';
+      font-size: 18px;
+      text-decoration: none;
+      transition-duration: .3s;
+
+      &:hover {
+        color: #406882;
+      }
+    }
+  }
+
+  .auth-container {
+    display: flex;
+
+    @media (min-width: 1200px) {
+      margin-left: auto;
+    }
+
+    a {
+      margin-left: 10px;
+      font-family: 'Nunito';
+      font-size: 14px;
+      text-decoration: none;
+      
+      @media (min-width: 1200px) {
+        font-size: 18px;
+      }
+    }
+  }
+}

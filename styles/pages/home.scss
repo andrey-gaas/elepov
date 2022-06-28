@@ -1,0 +1,85 @@
+#home-page {
+  header.top-container {
+    margin-top: 20px;
+
+    @media (min-width: 1200px) {
+      margin-top: 40px;
+    }
+
+    & > .container {
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      @media (min-width: 1200px) {
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+      }
+
+      h1 {
+        font-size: 18px;
+        font-weight: bold;
+
+        @media (min-width: 1200px) {
+          font-size: 36px;
+        }
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 12px;
+
+        @media (min-width: 1200px) {
+          margin-top: 40px;
+          font-size: 18px;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 210px;
+
+        @media (min-width: 1200px) {
+          flex-direction: row;
+          align-self: center;
+          justify-content: space-between;
+          margin-top: 60px;
+          width: 100%;
+        }
+        
+        .button {
+          margin-top: 20px;
+          width: 100%;
+
+          @media (min-width: 1200px) {
+            margin-top: 0;
+            width: 285px;
+          }
+        }
+      }
+    }
+    
+    .photo {
+      width: 100%;
+
+      @media (min-width: 1200px) {
+        width: 48%;
+      }
+    }
+  }
+}
