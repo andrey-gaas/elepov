@@ -5,13 +5,19 @@ mixin header()
         img(src="/images/logo.svg" alt="К 80-летию Б.С. Елепова").logo
 
       nav.nav
-        a(href="#about") О конференции
-        a(href="#programm") Программа
-        a(href="#registration") Участие
-        a(href="#organizers") Организаторы
-        a(href="#contacts") Контакты
+        a(href="/#about") О конференции
+        a(href="/#programm") Программа
+        a(href="/#registration") Участие
+        a(href="/#organizers") Организаторы
+        a(href="/#contacts") Контакты
 
-      div.auth-container
-        a(href="/registration") Регистрация
-        a(href="/login") Вход
+      if !user
+        div.auth-container
+          a(href="/registration") Регистрация
+          a(href="/login") Вход
+      
+      if user 
+        div.auth-container
+          a(href="/profile") Личный кабинет
+          a(href="/logout").gray Выход
 

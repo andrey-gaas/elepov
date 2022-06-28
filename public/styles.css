@@ -99,6 +99,9 @@ header.header .auth-container a {
     font-size: 18px;
   }
 }
+header.header .auth-container a.gray {
+  color: #BDBDBD;
+}
 
 button.button,
 a.button {

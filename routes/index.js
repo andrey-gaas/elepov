@@ -7,23 +7,25 @@ const auth = require('../middlewares/auth');
 const router = new Router();
 
 router.get('/', (req, res) => {
-  res.render('home', { user: req.user });
+  res.render('home', { user: req.user, title: 'К 80-летию Б.С. Елепова' });
 });
 
 router.get('/biography', (req, res) => {
-  res.render('biography');
+  res.render('biography', { user: req.user, title: 'Биография Б.С. Елепова' });
 });
 
 router.get('/registration', (req, res) => {
-  res.render('registration');
+  if (req.isAuthenticated()) return res.redirect('/profile');
+  res.render('registration', { title: 'Регистрация' });
 });
 
 router.get('/login', (req, res) => {
-  res.render('login');
+  if (req.isAuthenticated()) return res.redirect('/profile');
+  res.render('login', { title: 'Вход' });
 });
 
 router.get('/profile', auth, (req, res) => {
-  res.render('profile');
+  res.render('profile', { title: 'Личный кабинет', user: req.user });
 });
 
 // Handle data
@@ -58,9 +60,12 @@ router.post('/registration', async (req, res) => {
   }
 });
 
-router.post('/login',
-  passport.authenticate('local', { successRedirect: '/profile',
-                                   failureRedirect: '/login'})
-);
+router.post('/login', passport.authenticate('local', { successRedirect: '/profile', failureRedirect: '/login'}));
+
+router.get('/logout', (req, res, next) => {
+  req.logOut(function(asd) {
+    res.redirect('/');
+  });
+});
 
 module.exports = router;

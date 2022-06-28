@@ -64,6 +64,10 @@ header.header {
       @media (min-width: 1200px) {
         font-size: 18px;
       }
+
+      &.gray {
+        color: #BDBDBD;
+      }
     }
   }
 }
