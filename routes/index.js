@@ -1,11 +1,13 @@
 const { Router } = require('express');
+const passport = require('passport');
 const validator = require("email-validator");
 const Mongo = require('../db');
+const auth = require('../middlewares/auth');
 
 const router = new Router();
 
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { user: req.user });
 });
 
 router.get('/biography', (req, res) => {
@@ -20,7 +22,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/profile', (req, res) => {
+router.get('/profile', auth, (req, res) => {
   res.render('profile');
 });
 
@@ -35,12 +37,30 @@ router.post('/registration', async (req, res) => {
   if (checkbox !== 'on') return res.render('registration', { error: 'Для регистрации необходимо согласие на обработку персональных данных' });
 
   try {
-    const result = await Mongo.users.insertOne({ _id: email, name, organization, email, password });
+    const user = await Mongo.users.findOne({ _id: email });
+    if (user !== null) {
+      return res.render('registration', { error: 'Пользователь с таким Email уже зарегистрирован' });
+    }
+  } catch(error) {
+    return res.render('registration', { error: 'Ошибка сервера. Попробуйте еще раз.' });
+  }
 
-    res.render('profile');
+  try {
+    const result = await Mongo.users.insertOne({ _id: email, name, organization, email, password });
+    
+    req.logIn({ email, password }, function(err) {
+      return err
+        ? res.redirect('/login')
+        : res.redirect('/profile');
+    });
   } catch(error) {
     return res.render('registration', { error: 'Ошибка сервера. Попробуйте еще раз.' });
   }
 });
+
+router.post('/login',
+  passport.authenticate('local', { successRedirect: '/profile',
+                                   failureRedirect: '/login'})
+);
 
 module.exports = router;
