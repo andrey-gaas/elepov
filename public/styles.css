@@ -558,6 +558,11 @@ ul.list li::marker {
     font-size: 36px;
   }
 }
+#registration-page h2.error {
+  margin-top: 20px;
+  text-align: center;
+  color: red;
+}
 #registration-page .form {
   display: flex;
   flex-direction: column;
@@ -583,6 +588,11 @@ ul.list li::marker {
 #registration-page .form input[type=password]:focus {
   color: #406882;
   border-bottom-color: #406882;
+}
+#registration-page .form input[type=text].error,
+#registration-page .form input[type=email].error,
+#registration-page .form input[type=password].error {
+  border-color: red;
 }
 @media (min-width: 1200px) {
   #registration-page .form input[type=text],
@@ -614,6 +624,19 @@ ul.list li::marker {
   align-self: center;
   margin-top: 40px;
   border: none;
+}
+#registration-page .form .error {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+@media (min-width: 1200px) {
+  #registration-page .form .error {
+    font-size: 14px;
+  }
+}
+#registration-page .form .error.show {
+  display: block;
 }
 
 #login-page .paper {

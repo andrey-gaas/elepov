@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const router = require('./routes');
+const Mongo = require('./db');
 const port = 3009;
 
 app.set('views', './views')
 app.set('view engine', 'pug')
+
+// CONNECTION TO DATABASE
+Mongo.connect();
 
 app.use(express.static('public'));
 app.use(express.json());

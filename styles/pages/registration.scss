@@ -28,6 +28,12 @@
     }
   }
 
+  h2.error {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -50,6 +56,10 @@
       &:focus {
         color: $blue_color;
         border-bottom-color: $blue_color;
+      }
+
+      &.error {
+        border-color: red;
       }
 
       @media (min-width: 1200px) {
@@ -80,6 +90,21 @@
       align-self: center;
       margin-top: 40px;
       border: none;
+    }
+
+    .error {
+      display: none;
+
+      color: red;
+      font-size: 12px;
+
+      @media (min-width: 1200px) {
+        font-size: 14px;
+      }
+
+      &.show {
+        display: block;
+      }
     }
   }
 }
