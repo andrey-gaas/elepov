@@ -1,0 +1,26 @@
+extends layouts/main_layouts
+
+block content
+  div#profile-page
+    .container.narrow
+      .paper
+        h1.title Личная информация
+        div.info
+          label.title Фамилия Имя Отчество
+          input(type="text" value="Гаас Андрей Александрович" disabled).data
+        div.info
+          label.title Организация
+          input(type="text" value="ГПНТБ СО РАН" disabled).data
+        div.info
+          label.title Email
+          input(type="text" value="gaas.dron@yandex.ru" disabled).data
+      .paper
+        h1.title Доклад
+        form(action="/report" method="post")
+          div.info
+            label(for="title").title Название доклада
+            input(type="text" name="title")#title.data
+          div.info
+            label(for="annotation").title Аннотация
+            textarea(type="text" name="annotation")#annotation.data
+          button(type="button").button Прикрепить файл
