@@ -1,4 +1,22 @@
 #home-page {
+  section {
+    margin-top: 100px;
+
+    @media (min-width: 1200px) {
+      margin-top: 140px;
+    }
+  }
+
+  h2.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+      font-size: 36px;
+    }
+  }
+
   header.top-container {
     margin-top: 20px;
 
@@ -79,6 +97,206 @@
 
       @media (min-width: 1200px) {
         width: 48%;
+      }
+    }
+  }
+
+  .about {
+
+    .about-container {
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 12px;
+
+      @media (min-width: 1200px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .programm {
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+      border-radius: 15px;
+
+      @media (min-width: 1200px) {
+        margin-top: 0;
+        width: 385px;
+      }
+
+      .number {
+        font-family: $title_font;
+        font-size: 36px;
+        font-weight: bold;
+        color: $blue_color;
+      }
+
+      .text {
+        margin-top: 10px;
+        font-family: $title_font;
+        font-size: 12px;
+
+        @media (min-width: 1200px) {
+          margin-top: 20px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .registration {
+    padding: 20px 16px;
+    background-color: $blue_color;
+
+    & > .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 1200px) {
+      padding: 40px 16px;
+    }
+
+    h2.title {
+      color: #fff;
+    }
+
+    ul.list li {
+      color: #fff;
+
+      &::marker {
+        color: #fff;
+      }
+    }
+
+    .button {
+      align-self: center;
+      margin-top: 40px;
+      color: #fff;
+
+      @media (min-width: 1200px) {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  .organizers {
+    .organizers-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .logo {
+      margin-top: 20px;
+      width: 200px;
+
+      @media (min-width: 1200px) {
+        margin-top: 40px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .contacts {
+    & > .container {
+      @media (min-width: 1200px) {
+        width: 590px;
+      }
+    }
+    
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+
+      @media (min-width: 1200px) {
+        margin-top: 40px;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      span, a {
+        margin-top: 10px;
+        font-family: $title_font;
+        font-size: 12px;
+        text-align: center;
+
+        @media (min-width: 1200px) {
+          font-size: 18px;
+        }
+      }
+
+      .name {
+        font-weight: bold;
+      }
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: $blue_color;
+      }
+
+      .phone::before {
+        content: '';
+        position: absolute;
+        left: -24px;
+        width: 15px;
+        height: 15px;
+        background-image: url('/images/phone-icon.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (min-width: 1200px) {
+          top: 6px;
+        }
+      }
+
+      .email::before {
+        content: '';
+        position: absolute;
+        left: -24px;
+        width: 18px;
+        height: 15px;
+        background-image: url('/images/email-icon.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (min-width: 1200px) {
+          top: 6px;
+        }
       }
     }
   }

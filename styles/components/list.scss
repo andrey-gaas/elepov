@@ -1,0 +1,19 @@
+ul.list {
+  li {
+    margin-left: 18px;
+    margin-top: 10px;
+    font-size: 12px;
+
+    @media (min-width: 1200px) {
+      font-size: 18px;
+    }
+
+    &::marker {
+      color: $blue_color;
+    }
+
+    @media (min-width: 1200px) {
+      margin-top: 20px;
+    }
+  }
+}

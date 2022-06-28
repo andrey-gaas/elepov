@@ -6,4 +6,10 @@
     margin: 0 auto;
     width: 1200px;
   }
+
+  &.narrow {
+    @media (min-width: 1200px) {
+      width: 795px;
+    }
+  }
 }
