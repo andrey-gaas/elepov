@@ -667,6 +667,11 @@ ul.list li::marker {
     font-size: 36px;
   }
 }
+#login-page h2.error {
+  margin-top: 20px;
+  text-align: center;
+  color: red;
+}
 #login-page .form {
   display: flex;
   flex-direction: column;
@@ -702,6 +707,19 @@ ul.list li::marker {
   #login-page .form .button {
     width: 285 px;
   }
+}
+#login-page .form .error {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+@media (min-width: 1200px) {
+  #login-page .form .error {
+    font-size: 14px;
+  }
+}
+#login-page .form .error.show {
+  display: block;
 }
 
 #profile-page .paper {
