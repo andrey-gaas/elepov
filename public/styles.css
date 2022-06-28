@@ -451,3 +451,80 @@ ul.list li::marker {
     top: 6px;
   }
 }
+
+#biography-page h1.title {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  #biography-page h1.title {
+    margin-top: 40px;
+    font-size: 36px;
+  }
+}
+#biography-page p.subtitle {
+  margin-top: 20px;
+  font-family: "Nunito";
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  #biography-page p.subtitle {
+    margin: 40px auto 0;
+    font-size: 18px;
+    max-width: 790px;
+  }
+}
+#biography-page .info {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  #biography-page .info.reverse {
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 1200px) {
+  #biography-page .info {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+}
+#biography-page .text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  #biography-page .text {
+    justify-content: center;
+    margin-top: 0;
+    width: 50%;
+  }
+}
+#biography-page .text p {
+  margin-top: 10px;
+  font-family: "Nunito";
+  font-size: 12px;
+}
+#biography-page .text p:first-child {
+  margin-top: 0;
+}
+@media (min-width: 1200px) {
+  #biography-page .text p {
+    font-size: 18px;
+  }
+}
+#biography-page .photo {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  #biography-page .photo {
+    width: 48%;
+  }
+}
