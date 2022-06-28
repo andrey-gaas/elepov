@@ -29,6 +29,7 @@
   }
   
   .info {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -53,8 +54,31 @@
       border: 2px solid $blue_color;
       border-radius: 15px;
 
+      &:disabled {
+        border-color: #B1D0E0;
+      }
+
       @media (min-width: 1200px) {
         font-size: 18px;
+      }
+    }
+
+    button.btn {
+      position: absolute;
+      top: 45px;
+      right: 15px;
+      width: 20px;
+      height: 20px;
+      background-image: url(/images/edit-icon.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+
+      @media (min-width: 1200px) {
+        top: 48px;
+        width: 25px;
+        height: 25px;
       }
     }
 

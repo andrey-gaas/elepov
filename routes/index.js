@@ -28,6 +28,12 @@ router.get('/profile', auth, (req, res) => {
   res.render('profile', { title: 'Личный кабинет', user: req.user });
 });
 
+router.get('/logout', (req, res, next) => {
+  req.logOut(function(asd) {
+    res.redirect('/');
+  });
+});
+
 // Handle data
 router.post('/registration', async (req, res) => {
   const { name, organization, email, password, checkbox } = req.body;
@@ -62,10 +68,15 @@ router.post('/registration', async (req, res) => {
 
 router.post('/login', passport.authenticate('local', { successRedirect: '/profile', failureRedirect: '/login'}));
 
-router.get('/logout', (req, res, next) => {
-  req.logOut(function(asd) {
-    res.redirect('/');
-  });
+router.put('/profile', auth, async (req, res) => {
+  try {
+    await Mongo.users.findOneAndUpdate({ _id: req.user.email }, { '$set': req.body });
+
+    res.send({ success: true });
+  } catch(error) {
+    console.log(error);
+    return res.status(500).send({ error: 'Ошибка сервера. Попробуйте еще раз.' });
+  }
 });
 
 module.exports = router;

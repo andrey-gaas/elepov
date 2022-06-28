@@ -5,15 +5,16 @@ block content
     .container.narrow
       .paper
         h1.title Личная информация
-        div.info
+        div.info#name-field
           label.title Фамилия Имя Отчество
-          input(type="text" value="Гаас Андрей Александрович" disabled).data
+          input(type="text" value=`${user.name}` disabled).data
+          button.btn
         div.info
           label.title Организация
-          input(type="text" value="ГПНТБ СО РАН" disabled).data
+          input(type="text" value=`${user.organization}` disabled).data
         div.info
           label.title Email
-          input(type="text" value="gaas.dron@yandex.ru" disabled).data
+          input(type="text" value=`${user.email}` disabled).data
       .paper
         h1.title Доклад
         form(action="/report" method="post")
@@ -24,3 +25,4 @@ block content
             label(for="annotation").title Аннотация
             textarea(type="text" name="annotation")#annotation.data
           button(type="button").button Прикрепить файл
+  script(src="/scripts/profile.js") 
