@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Literata', serif;
   font-size: 12px;
+  line-height: 140%;
   color: #212121;
 }
 
@@ -17,6 +18,34 @@
   .container {
     margin: 0 auto;
     width: 1200px;
+  }
+}
+
+/* BUTTON */
+button.button,
+a.button {
+  padding: 18px 15px;
+  font-family: 'Nunito';
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #406882;
+  border-radius: 15px;
+}
+
+button.button.reverse,
+a.button.reverse {
+  color: #406882;
+  background-color: #fff;
+  border: 2px solid;
+}
+
+@media (min-width: 1200px) {
+  button.button,
+  a.button {
+    padding: 28px 15px;
+    font-size: 18px;
   }
 }
 
@@ -117,5 +146,93 @@ footer.footer .logo {
 
   footer.footer .logo {
     width: 120px;
+  }
+}
+
+/* HOME PAGE */
+
+header.top-container {
+  margin-top: 20px;
+}
+
+header.top-container > .container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+header.top-container .description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+header.top-container .description h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header.top-container .description p {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+header.top-container .description .buttons {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 210px;
+}
+
+header.top-container .description .buttons .button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+header.top-container .photo {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  header.top-container {
+    margin-top: 40px;
+  }
+
+  header.top-container > .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header.top-container .description {
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+
+  header.top-container .description h1 {
+    font-size: 36px;
+  }
+  
+  header.top-container .description p {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+
+  header.top-container .description .buttons {
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    width: 100%;
+  }
+  
+  header.top-container .description .buttons .button {
+    margin-top: 0;
+    width: 285px;
+  }
+
+  header.top-container .photo {
+    width: 48%;
   }
 }
