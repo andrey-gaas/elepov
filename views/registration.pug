@@ -1,0 +1,16 @@
+extends layouts/main_layouts
+
+block content
+  div#registration-page
+    .container.narrow
+      .paper
+        h1.title Регистрация
+        form(action="/registration" method="post").form
+          input(type="text" name="name" placeholder="ФИО")
+          input(type="text" name="organization" placeholder="Организация")
+          input(type="email" name="email" placeholder="E-Mail")
+          input(type="password" name="password" placeholder="Пароль")
+          div.checkbox
+            input(type="checkbox" name="checkbox")#checkbox
+            label(for="checkbox") Согласие на обработку персональных данных
+          button(type="button").button Зарегистрироваться
