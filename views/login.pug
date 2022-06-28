@@ -1,0 +1,11 @@
+extends layouts/main_layouts
+
+block content
+  div#login-page
+    .container.narrow
+      .paper
+        h1.title Вход
+        form(action="/login" method="post").form
+          input(type="email" name="email" placeholder="E-Mail")
+          input(type="password" name="password" placeholder="Пароль")
+          button(type="button").button Войти

@@ -110,6 +110,7 @@ a.button {
   color: #fff;
   background-color: #406882;
   border-radius: 15px;
+  cursor: pointer;
 }
 button.button.reverse,
 a.button.reverse {
@@ -600,6 +601,7 @@ ul.list li::marker {
   }
 }
 #registration-page .form .checkbox label {
+  margin-left: 8px;
   font-family: "Nunito";
   font-size: 12px;
 }
@@ -612,4 +614,69 @@ ul.list li::marker {
   align-self: center;
   margin-top: 40px;
   border: none;
+}
+
+#login-page .paper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+  border-radius: 15px;
+}
+@media (min-width: 1200px) {
+  #login-page .paper {
+    margin-top: 140px;
+  }
+}
+@media (min-width: 1200px) {
+  #login-page > .container {
+    width: 590px;
+  }
+}
+#login-page h1.title {
+  font-size: 18px;
+  align-self: center;
+}
+@media (min-width: 1200px) {
+  #login-page h1.title {
+    font-size: 36px;
+  }
+}
+#login-page .form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+#login-page .form input[type=email],
+#login-page .form input[type=password] {
+  margin-top: 20px;
+  font-family: "Nunito";
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  outline: none;
+}
+#login-page .form input[type=email]:focus,
+#login-page .form input[type=password]:focus {
+  color: #406882;
+  border-bottom-color: #406882;
+}
+@media (min-width: 1200px) {
+  #login-page .form input[type=email],
+#login-page .form input[type=password] {
+    font-size: 14px;
+  }
+}
+#login-page .form .button {
+  align-self: center;
+  margin-top: 60px;
+  width: 200px;
+  border: none;
+}
+@media (min-width: 1200px) {
+  #login-page .form .button {
+    width: 285 px;
+  }
 }

@@ -1,4 +1,4 @@
-#registration-page {
+#login-page {
   .paper {
     display: flex;
     flex-direction: column;
@@ -33,11 +33,6 @@
     flex-direction: column;
     margin-top: 100px;
 
-    @media (min-width: 1200px) {
-      margin-top: 140px;
-    }
-
-    input[type="text"],
     input[type="email"],
     input[type="password"] {
       margin-top: 20px;
@@ -57,29 +52,15 @@
       }
     }
 
-    .checkbox {
-      margin-top: 20px;
-
-      @media (min-width: 1200px) {
-        align-self: center;
-        margin-top: 40px;
-      }
-
-      label {
-        margin-left: 8px;
-        font-family: $title_font;
-        font-size: 12px;
-
-        @media (min-width: 1200px) {
-          font-size: 14px;
-        }
-      }
-    }
-
     .button {
       align-self: center;
-      margin-top: 40px;
+      margin-top: 60px;
+      width: 200px;
       border: none;
+
+      @media (min-width: 1200px) {
+        width: 285  px;
+      }
     }
   }
 }
