@@ -866,6 +866,26 @@ ul.list li::marker {
   display: flex;
   flex-direction: column;
 }
+#profile-page #file {
+  display: none;
+}
+#profile-page #file + label {
+  padding: 18px 15px;
+  font-family: "Nunito";
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #406882;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid #406882;
+  transition-duration: 0.3s;
+}
+#profile-page #file + label:hover {
+  background-color: #FFF;
+  color: #406882;
+}
 #profile-page .button {
   align-self: center;
   margin-top: 40px;

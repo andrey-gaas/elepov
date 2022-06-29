@@ -46,3 +46,5 @@ nameEditButton.onclick = editData(nameField, 'Введите корректно�
 const organizationField = document.querySelector('#organization-field');
 const organizationEditButton = organizationField.childNodes[2];
 organizationEditButton.onclick = editData(organizationField, 'Введите корректное название организации');
+
+// Доклад

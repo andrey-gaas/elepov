@@ -97,6 +97,29 @@
     flex-direction: column;
   }
 
+  #file {
+    display: none;
+
+    &+label {
+      padding: 18px 15px;
+      font-family: 'Nunito';
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: $blue_color;
+      border-radius: 15px;
+      cursor: pointer;
+      border: 2px solid $blue_color;
+      transition-duration: .3s;
+
+      &:hover {
+        background-color: #FFF;
+        color: $blue_color;
+      }
+    }
+  }
+
   .button {
     align-self: center;
     margin-top: 40px;
