@@ -7,14 +7,15 @@ block content
         h1.title Личная информация
         div.info#name-field
           label.title Фамилия Имя Отчество
-          input(type="text" value=`${user.name}` disabled).data
+          input(type="text" value=`${user.name}` name="name" disabled).data
           button.btn
-        div.info
+        div.info#organization-field
           label.title Организация
-          input(type="text" value=`${user.organization}` disabled).data
-        div.info
+          input(type="text" value=`${user.organization}` name="organization" disabled).data
+          button.btn
+        div.info#email-field
           label.title Email
-          input(type="text" value=`${user.email}` disabled).data
+          input(type="text" value=`${user.email}` name="email" disabled).data
       .paper
         h1.title Доклад
         form(action="/report" method="post")

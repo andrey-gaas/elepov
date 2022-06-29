@@ -855,6 +855,9 @@ ul.list li::marker {
     height: 25px;
   }
 }
+#profile-page .info button.btn.save {
+  background-image: url(/images/save-icon.svg);
+}
 #profile-page .info textarea {
   resize: vertical;
   min-height: 240px;

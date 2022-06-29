@@ -80,6 +80,10 @@
         width: 25px;
         height: 25px;
       }
+
+      &.save {
+        background-image: url(/images/save-icon.svg);
+      }
     }
 
     textarea {
