@@ -7,11 +7,11 @@ const auth = require('../middlewares/auth');
 const router = new Router();
 
 router.get('/', (req, res) => {
-  res.render('home', { user: req.user, title: 'К 80-летию Б.С. Елепова' });
+  res.render('home', { user: req.user, title: 'К 80-летию Б.С. Елепова', page: 'home' });
 });
 
 router.get('/biography', (req, res) => {
-  res.render('biography', { user: req.user, title: 'Биография Б.С. Елепова' });
+  res.render('biography', { user: req.user, title: 'Биография Б.С. Елепова', page: 'biography' });
 });
 
 router.get('/registration', (req, res) => {

@@ -67,7 +67,8 @@ header.header nav.nav {
 }
 @media (min-width: 1200px) {
   header.header nav.nav {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 header.header nav.nav a {
@@ -80,8 +81,29 @@ header.header nav.nav a {
 header.header nav.nav a:hover {
   color: #406882;
 }
+header.header nav.nav a b {
+  font-family: "Nunito";
+  font-size: 18px;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+header.header nav.nav a b:hover {
+  color: #406882;
+}
+header.header nav.nav div {
+  margin-right: 10px;
+  width: 2px;
+  height: 20px;
+  background-color: #406882;
+}
+@media (min-width: 1200px) {
+  header.header nav.nav div {
+    margin-right: 20px;
+  }
+}
 header.header .auth-container {
   display: flex;
+  align-items: center;
 }
 @media (min-width: 1200px) {
   header.header .auth-container {
@@ -89,7 +111,6 @@ header.header .auth-container {
   }
 }
 header.header .auth-container a {
-  margin-left: 10px;
   font-family: "Nunito";
   font-size: 14px;
   text-decoration: none;
@@ -101,6 +122,17 @@ header.header .auth-container a {
 }
 header.header .auth-container a.gray {
   color: #BDBDBD;
+}
+header.header .auth-container div {
+  margin: 0 10px;
+  width: 2px;
+  height: 20px;
+  background-color: #406882;
+}
+@media (min-width: 1200px) {
+  header.header .auth-container div {
+    margin: 0 20px;
+  }
 }
 
 button.button,
@@ -114,12 +146,25 @@ a.button {
   background-color: #406882;
   border-radius: 15px;
   cursor: pointer;
+  border: 2px solid #406882;
+  transition-duration: 0.3s;
+}
+button.button:hover,
+a.button:hover {
+  background-color: #FFF;
+  color: #406882;
 }
 button.button.reverse,
 a.button.reverse {
   color: #406882;
   background-color: transparent;
   border: 2px solid;
+}
+button.button.reverse:hover,
+a.button.reverse:hover {
+  background-color: #406882;
+  color: #fff;
+  border-color: #406882;
 }
 @media (min-width: 1200px) {
   button.button,
@@ -156,6 +201,7 @@ footer.footer .logo {
 ul.list li {
   margin-left: 18px;
   margin-top: 10px;
+  font-family: "Nunito";
   font-size: 12px;
 }
 @media (min-width: 1200px) {
@@ -279,6 +325,7 @@ ul.list li::marker {
 }
 #home-page .about p {
   font-size: 12px;
+  font-family: "Nunito";
 }
 @media (min-width: 1200px) {
   #home-page .about p {
@@ -354,6 +401,10 @@ ul.list li::marker {
   align-self: center;
   margin-top: 40px;
   color: #fff;
+}
+#home-page .registration .button:hover {
+  color: #406882;
+  background-color: #fff;
 }
 @media (min-width: 1200px) {
   #home-page .registration .button {
@@ -626,7 +677,6 @@ ul.list li::marker {
 #registration-page .form .button {
   align-self: center;
   margin-top: 40px;
-  border: none;
 }
 #registration-page .form .error {
   display: none;
@@ -704,11 +754,10 @@ ul.list li::marker {
   align-self: center;
   margin-top: 60px;
   width: 200px;
-  border: none;
 }
 @media (min-width: 1200px) {
   #login-page .form .button {
-    width: 285 px;
+    width: 285px;
   }
 }
 #login-page .form .error {
@@ -817,5 +866,4 @@ ul.list li::marker {
 #profile-page .button {
   align-self: center;
   margin-top: 40px;
-  border: none;
 }

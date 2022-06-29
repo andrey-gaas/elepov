@@ -2,6 +2,7 @@ ul.list {
   li {
     margin-left: 18px;
     margin-top: 10px;
+    font-family: $title_font;
     font-size: 12px;
 
     @media (min-width: 1200px) {

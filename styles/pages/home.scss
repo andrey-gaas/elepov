@@ -109,6 +109,7 @@
 
     p {
       font-size: 12px;
+      font-family: $title_font;
 
       @media (min-width: 1200px) {
         font-size: 18px;
@@ -191,6 +192,11 @@
       align-self: center;
       margin-top: 40px;
       color: #fff;
+
+      &:hover {
+        color: $blue_color;
+        background-color: #fff;
+      }
 
       @media (min-width: 1200px) {
         margin-top: 60px;

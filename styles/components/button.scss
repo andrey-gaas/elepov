@@ -6,14 +6,27 @@ a.button {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: #406882;
+  background-color: $blue_color;
   border-radius: 15px;
   cursor: pointer;
+  border: 2px solid $blue_color;
+  transition-duration: .3s;
+
+  &:hover {
+    background-color: #FFF;
+    color: $blue_color;
+  }
 
   &.reverse {
-    color: #406882;
+    color: $blue_color;
     background-color: transparent;
     border: 2px solid;
+
+    &:hover {
+      background-color: $blue_color;
+      color: #fff;
+      border-color: $blue_color;
+    }
   }
   
   @media (min-width: 1200px) {

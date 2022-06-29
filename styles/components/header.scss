@@ -32,7 +32,8 @@ header.header {
     margin-left: 40px;
 
     @media (min-width: 1200px) {
-      display: block;
+      display: flex;
+      align-items: center;
     }
 
     a {
@@ -45,18 +46,41 @@ header.header {
       &:hover {
         color: #406882;
       }
+
+      b {
+        font-family: 'Nunito';
+        font-size: 18px;
+        text-decoration: none;
+        transition-duration: .3s;
+  
+        &:hover {
+          color: #406882;
+        }
+      }
+    }
+
+
+    div {
+      margin-right: 10px;
+      width: 2px;
+      height: 20px;
+      background-color: $blue_color;
+      
+      @media (min-width: 1200px) {
+        margin-right: 20px;
+      }
     }
   }
 
   .auth-container {
     display: flex;
+    align-items: center;
 
     @media (min-width: 1200px) {
       margin-left: auto;
     }
 
     a {
-      margin-left: 10px;
       font-family: 'Nunito';
       font-size: 14px;
       text-decoration: none;
@@ -67,6 +91,17 @@ header.header {
 
       &.gray {
         color: #BDBDBD;
+      }
+    }
+
+    div {
+      margin: 0 10px;
+      width: 2px;
+      height: 20px;
+      background-color: $blue_color;
+      
+      @media (min-width: 1200px) {
+        margin: 0 20px;
       }
     }
   }
