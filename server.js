@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const fileUpload = require("express-fileupload");
 const app = express();
 const router = require('./routes');
 const Mongo = require('./db');
@@ -7,6 +8,7 @@ const port = 3009;
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use(fileUpload({}));
 app.set('views', './views')
 app.set('view engine', 'pug')
 app.use(require('express-session')({ secret: 'great library', resave: true, saveUninitialized: true }));

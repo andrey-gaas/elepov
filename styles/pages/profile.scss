@@ -117,11 +117,17 @@
         background-color: #FFF;
         color: $blue_color;
       }
+  
+      @media (min-width: 1200px) {
+        padding: 28px 15px;
+        font-size: 18px;
+      }
     }
   }
 
-  .button {
-    align-self: center;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
     margin-top: 40px;
   }
 }

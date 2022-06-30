@@ -48,3 +48,33 @@ const organizationEditButton = organizationField.childNodes[2];
 organizationEditButton.onclick = editData(organizationField, 'Введите корректное название организации');
 
 // Доклад
+const reportForm = document.querySelector('#report-form');
+const titleReportField = document.querySelector('#title');
+const annotationReportField = document.querySelector('#annotation');
+const fileReport = document.querySelector('#file');
+const saveReportButton = document.querySelector('#save');
+
+saveReportButton.onclick = function(event) {
+  let hasError = false;
+
+  if (!titleReportField.value) {
+    alert('Введите название доклада');
+    hasError = true;
+  }
+
+  if (!annotationReportField.value) {
+    alert('Введите аннотацию');
+    hasError = true;
+  }
+
+  if (hasError) return false;
+
+  const formData = new FormData(reportForm);
+  
+  fetch('/report', {
+    method: 'post',
+    body: formData,
+  })
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+}

@@ -886,7 +886,14 @@ ul.list li::marker {
   background-color: #FFF;
   color: #406882;
 }
-#profile-page .button {
-  align-self: center;
+@media (min-width: 1200px) {
+  #profile-page #file + label {
+    padding: 28px 15px;
+    font-size: 18px;
+  }
+}
+#profile-page .buttons {
+  display: flex;
+  justify-content: space-between;
   margin-top: 40px;
 }

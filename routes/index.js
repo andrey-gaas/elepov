@@ -1,6 +1,9 @@
 const { Router } = require('express');
 const passport = require('passport');
 const validator = require("email-validator");
+const path = require('path');
+const fs = require('fs');
+const uuid = require('uuid');
 const Mongo = require('../db');
 const auth = require('../middlewares/auth');
 
@@ -76,6 +79,50 @@ router.put('/profile', auth, async (req, res) => {
   } catch(error) {
     console.log(error);
     return res.status(500).send({ error: 'Ошибка сервера. Попробуйте еще раз.' });
+  }
+});
+
+router.post('/report', auth, async (req, res) => {
+  const report = req.files.file;
+  const { title, annotation } = req.body;
+  
+  if (!title) {
+    return res.status(400).send('Введите название доклада');
+  }
+  
+  if (!annotation) {
+    return res.status(400).send('Введите аннотацию');
+  }
+  
+  if (!report) {
+    return res.status(400).send('Прикрепита файл доклада');
+  }
+
+  const fileExtension = report.name.split('.').pop();
+    
+  // Название файла: id + оригинальное расширение
+  const fileName = `${uuid.v4()}.${fileExtension}`;
+
+  // Сохранение файла
+  try {
+    report.mv(path.join(__dirname, '..', 'public', 'reports', fileName));
+  } catch(error) {
+    return res.status(400).send('Ошибка сохранения файла. Попробуйте еще раз');
+  }
+
+  const data = {};
+
+  data.user = req.user._id;
+  data.title = title;
+  data.annotation = annotation;
+  data.file = `/reports/${fileName}`;
+
+  try {
+    await Mongo.reports.insertOne(data);
+
+    res.send({ success: true });
+  } catch(error) {
+    return res.status(500).send('Ошибка сервера. Попробуйте еще раз');
   }
 });
 
