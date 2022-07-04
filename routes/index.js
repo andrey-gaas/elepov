@@ -61,10 +61,10 @@ router.get('/admin', auth, async (req, res, next) => {
 router.post('/registration', async (req, res) => {
   const { name, organization, email, password, checkbox } = req.body;
 
-  if (!name?.length) return res.render('registration', { error: 'Введите ФИО' });
-  if (!organization?.length) return res.render('registration', { error: 'Введите название организации' });
+  if (!name || !name.length) return res.render('registration', { error: 'Введите ФИО' });
+  if (!organization || !organization.length) return res.render('registration', { error: 'Введите название организации' });
   if (!validator.validate(email)) return res.render('registration', { error: 'Введите корректный Email' });
-  if (!password?.length || password.length < 6 || password.length > 20) return res.render('registration', { error: 'Пароль должен содержать от 6 до 20 символов' });
+  if (!password || !password.length || password.length < 6 || password.length > 20) return res.render('registration', { error: 'Пароль должен содержать от 6 до 20 символов' });
   if (checkbox !== 'on') return res.render('registration', { error: 'Для регистрации необходимо согласие на обработку персональных данных' });
 
   try {
