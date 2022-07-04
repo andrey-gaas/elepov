@@ -1,0 +1,21 @@
+extends layouts/main_layouts
+
+block content
+  div#admin-page
+    .container
+      h1.title Список докладов
+      if reports.length == 0
+        p.text Список докладов пуст
+      if reports.length > 0
+        div.reports-list
+          each report in reports
+              .report
+                div
+                  p.title #{report.title}
+                  p.annotation #{report.annotation}
+                  p.user #{report.user}
+                div.buttons
+                  a.button(href=report.file target="_blank") Открыть файл
+                  button.button.remove-button(data-id=report._id) Удалить
+  script(src="/scripts/admin.js") 
+                

@@ -957,3 +957,52 @@ ul.list li::marker {
   margin-left: auto;
   padding: 5px 10px;
 }
+
+#admin-page h1.title {
+  margin-top: 40px;
+  font-size: 36px;
+  text-align: center;
+}
+#admin-page p.text {
+  margin-top: 40px;
+  font-size: 24px;
+  text-align: center;
+}
+#admin-page .reports-list {
+  margin-top: 40px;
+}
+#admin-page .reports-list .report {
+  display: flex;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #eee;
+  border-radius: 15px;
+}
+#admin-page .reports-list .report:first-child {
+  margin-top: 0;
+}
+#admin-page .reports-list .report .title {
+  font-family: "Nunito";
+  font-size: 26px;
+}
+#admin-page .reports-list .report .annotation {
+  margin-top: 20px;
+  font-family: "Nunito";
+  font-size: 18px;
+}
+#admin-page .reports-list .report .user {
+  margin-top: 20px;
+  font-family: "Nunito";
+  font-size: 18px;
+  color: #666;
+}
+#admin-page .reports-list .buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+#admin-page .button {
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 5px 10px;
+}

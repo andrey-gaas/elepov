@@ -9,6 +9,8 @@ const auth = require('../middlewares/auth');
 
 const router = new Router();
 
+// PAGES
+
 router.get('/', (req, res) => {
   res.render('home', { user: req.user, title: 'К 80-летию Б.С. Елепова', page: 'home' });
 });
@@ -36,10 +38,23 @@ router.get('/profile', auth, async (req, res) => {
   res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
 });
 
-router.get('/logout', (req, res, next) => {
-  req.logOut(function(asd) {
-    res.redirect('/');
-  });
+router.get('/admin', auth, async (req, res, next) => {
+  if (!req.user.admin) {
+    return res.redirect('/profile');
+  }
+
+  let reports = null;
+
+  try {
+    reports = await Mongo
+      .reports
+      .find({})
+      .toArray();
+  } catch(error) {
+    return res.status(500).send('Ошибка сервера');
+  }
+
+  res.render('admin', { reports, user: req.user });
 });
 
 // Handle data
@@ -87,6 +102,13 @@ router.put('/profile', auth, async (req, res) => {
   }
 });
 
+router.get('/logout', (req, res, next) => {
+  req.logOut(function(asd) {
+    res.redirect('/');
+  });
+});
+
+// Reports
 router.post('/report', auth, async (req, res) => {
   const report = req.files.file;
   const { title, annotation } = req.body;
