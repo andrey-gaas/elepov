@@ -19,6 +19,11 @@ block content
       if reports.length > 0
         .paper
           h1.title Мои доклады
+          .reports-list 
+            each report in reports
+              .report 
+                span.title #{report.title}
+                button.button.remove-button Удалить
       .paper
         h1.title Добавить доклад
         form(action="/report" method="post")#report-form

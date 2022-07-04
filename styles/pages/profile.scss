@@ -130,4 +130,39 @@
     justify-content: space-between;
     margin-top: 40px;
   }
+
+  .reports-list {
+    margin-top: 20px;
+  
+    @media (min-width: 1200px) {
+      margin-top: 40px;
+    }
+
+    .report {
+      display: flex;
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid #eee;
+      border-radius: 15px;
+      
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .title {
+      font-family: $title_font;
+      font-size: 14px;
+  
+      @media (min-width: 1200px) {
+        font-size: 18px;
+      }
+    }
+
+    .remove-button {
+      align-self: flex-start;
+      margin-left: auto;
+      padding: 5px 10px;
+    }
+  }
 }

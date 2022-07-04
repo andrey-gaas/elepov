@@ -925,3 +925,35 @@ ul.list li::marker {
   justify-content: space-between;
   margin-top: 40px;
 }
+#profile-page .reports-list {
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  #profile-page .reports-list {
+    margin-top: 40px;
+  }
+}
+#profile-page .reports-list .report {
+  display: flex;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #eee;
+  border-radius: 15px;
+}
+#profile-page .reports-list .report:first-child {
+  margin-top: 0;
+}
+#profile-page .reports-list .title {
+  font-family: "Nunito";
+  font-size: 14px;
+}
+@media (min-width: 1200px) {
+  #profile-page .reports-list .title {
+    font-size: 18px;
+  }
+}
+#profile-page .reports-list .remove-button {
+  align-self: flex-start;
+  margin-left: auto;
+  padding: 5px 10px;
+}
