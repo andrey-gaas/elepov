@@ -33,8 +33,6 @@ router.get('/profile', auth, async (req, res) => {
     .find({ user: req.user._id })
     .toArray();
 
-    console.log(reports);
-
   res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
 });
 
@@ -92,6 +90,7 @@ router.put('/profile', auth, async (req, res) => {
 router.post('/report', auth, async (req, res) => {
   const report = req.files.file;
   const { title, annotation } = req.body;
+
   
   if (!title) {
     return res.status(400).send('Введите название доклада');
@@ -119,6 +118,7 @@ router.post('/report', auth, async (req, res) => {
 
   const data = {};
 
+  data._id = uuid.v4();
   data.user = req.user._id;
   data.title = title;
   data.annotation = annotation;
@@ -130,6 +130,20 @@ router.post('/report', auth, async (req, res) => {
     res.send({ success: true });
   } catch(error) {
     return res.status(500).send('Ошибка сервера. Попробуйте еще раз');
+  }
+});
+
+router.delete('/report/:id', async (req, res) => {
+  const _id = req.params.id;
+
+  try {
+    const result = await Mongo
+      .reports
+      .findOneAndDelete({ _id });
+
+    res.send(result);
+  } catch(error) {
+    return res.status(500).send('Ошибка сервера');
   }
 });
 

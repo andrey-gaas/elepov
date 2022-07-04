@@ -23,7 +23,7 @@ block content
             each report in reports
               .report 
                 span.title #{report.title}
-                button.button.remove-button Удалить
+                button.button.remove-button(data-id=report._id) Удалить
       .paper
         h1.title Добавить доклад
         form(action="/report" method="post")#report-form
