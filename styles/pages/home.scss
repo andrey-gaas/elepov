@@ -140,7 +140,7 @@
 
       @media (min-width: 1200px) {
         margin-top: 0;
-        width: 385px;
+        width: 285px;
       }
 
       .number {
@@ -229,9 +229,35 @@
   }
 
   .contacts {
-    & > .container {
+    .cards {
+      display: flex;
+      flex-direction: column;
+
       @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      height: 100%;
+
+      @media (min-width: 1200px) {
+        margin-top: 40px;
         width: 590px;
+      }
+    }
+
+    .person-description {
+      font-family: $title_font;
+      font-size: 12px;
+      text-align: center;
+
+      @media (min-width: 1200px) {
+        font-size: 18px;
       }
     }
     
@@ -252,6 +278,7 @@
       img {
         width: 60px;
         height: 60px;
+        border-radius: 50%;
       }
 
       span, a {

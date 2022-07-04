@@ -355,7 +355,7 @@ ul.list li::marker {
 @media (min-width: 1200px) {
   #home-page .programm .card {
     margin-top: 0;
-    width: 385px;
+    width: 285px;
   }
 }
 #home-page .programm .card .number {
@@ -433,9 +433,36 @@ ul.list li::marker {
     justify-content: space-between;
   }
 }
+#home-page .contacts .cards {
+  display: flex;
+  flex-direction: column;
+}
 @media (min-width: 1200px) {
-  #home-page .contacts > .container {
+  #home-page .contacts .cards {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+#home-page .contacts .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100%;
+}
+@media (min-width: 1200px) {
+  #home-page .contacts .card-wrapper {
+    margin-top: 40px;
     width: 590px;
+  }
+}
+#home-page .contacts .person-description {
+  font-family: "Nunito";
+  font-size: 12px;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  #home-page .contacts .person-description {
+    font-size: 18px;
   }
 }
 #home-page .contacts .card {
@@ -456,6 +483,7 @@ ul.list li::marker {
 #home-page .contacts .card img {
   width: 60px;
   height: 60px;
+  border-radius: 50%;
 }
 #home-page .contacts .card span, #home-page .contacts .card a {
   margin-top: 10px;
