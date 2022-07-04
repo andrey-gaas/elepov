@@ -27,8 +27,15 @@ router.get('/login', (req, res) => {
   res.render('login', { title: 'Вход' });
 });
 
-router.get('/profile', auth, (req, res) => {
-  res.render('profile', { title: 'Личный кабинет', user: req.user });
+router.get('/profile', auth, async (req, res) => {
+  const reports = await Mongo
+    .reports
+    .find({ user: req.user._id })
+    .toArray();
+
+    console.log(reports);
+
+  res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
 });
 
 router.get('/logout', (req, res, next) => {

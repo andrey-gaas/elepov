@@ -57,6 +57,8 @@ const saveReportButton = document.querySelector('#save');
 saveReportButton.onclick = function(event) {
   let hasError = false;
 
+  console.log(fileReport.value);
+
   if (!titleReportField.value) {
     alert('Введите название доклада');
     hasError = true;
@@ -64,6 +66,11 @@ saveReportButton.onclick = function(event) {
 
   if (!annotationReportField.value) {
     alert('Введите аннотацию');
+    hasError = true;
+  }
+
+  if (!fileReport.value) {
+    alert('Добавьте файл');
     hasError = true;
   }
 

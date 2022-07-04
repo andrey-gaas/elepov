@@ -16,8 +16,11 @@ block content
         div.info#email-field
           label.title Email
           input(type="text" value=`${user.email}` name="email" disabled).data
+      if reports.length > 0
+        .paper
+          h1.title Мои доклады
       .paper
-        h1.title Доклад
+        h1.title Добавить доклад
         form(action="/report" method="post")#report-form
           div.info
             label(for="title").title Название доклада
