@@ -13,7 +13,7 @@ block content
                 div
                   p.title #{report.title}
                   p.annotation #{report.annotation}
-                  p.user #{report.user}
+                  p.user #{report.user.name}, #{report.user.organization}, #{report.user.email}
                 div.buttons
                   if report.file
                     a.button(href=report.file target="_blank") Открыть файл

@@ -160,7 +160,9 @@ router.post('/report', auth, async (req, res) => {
   const data = {};
 
   data._id = uuid.v4();
-  data.user = req.user._id;
+  data.user = {
+    ...req.user,
+  };
   data.title = title;
   data.annotation = annotation;
   data.file = fileName ? `/reports/${fileName}` : null;
