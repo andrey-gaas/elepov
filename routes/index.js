@@ -89,12 +89,24 @@ router.post('/registration', async (req, res) => {
     return res.render('registration', { error: 'Ошибка сервера. Попробуйте еще раз.' });
   }
 
+  // Письмо пользователю
   try {
     await sendMail({
       email,
       subject: "Регистрация на elepov.gpntbsib.ru",
       text: "",
     }, require('../mail/templates/registrarion')(email, password));
+  } catch(error) {
+    console.log(error);
+  }
+
+  // Письмо проверяльщику
+  try {
+    await sendMail({
+      email: 'stukalova@gpntbsib.ru',
+      subject: "Регистрация нового участника",
+      text: "",
+    }, require('../mail/templates/newUser')(name, organization, email, password));
   } catch(error) {
     console.log(error);
   }
