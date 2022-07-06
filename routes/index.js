@@ -6,6 +6,7 @@ const fs = require('fs');
 const uuid = require('uuid');
 const Mongo = require('../db');
 const auth = require('../middlewares/auth');
+const sendMail = require('../mail/sendMail');
 
 const router = new Router();
 
@@ -86,6 +87,16 @@ router.post('/registration', async (req, res) => {
     });
   } catch(error) {
     return res.render('registration', { error: 'Ошибка сервера. Попробуйте еще раз.' });
+  }
+
+  try {
+    await sendMail({
+      email,
+      subject: "Регистрация на elepov.gpntbsib.ru",
+      text: "",
+    }, require('../mail/templates/registrarion')(email, password));
+  } catch(error) {
+    console.log(error);
   }
 });
 
