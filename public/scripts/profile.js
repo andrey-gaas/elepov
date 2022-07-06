@@ -55,9 +55,8 @@ const fileReport = document.querySelector('#file');
 const saveReportButton = document.querySelector('#save');
 
 saveReportButton.onclick = function(event) {
+  saveReportButton.disabled = true;
   let hasError = false;
-
-  console.log(fileReport.value);
 
   if (!titleReportField.value) {
     alert('Введите название доклада');
@@ -75,7 +74,11 @@ saveReportButton.onclick = function(event) {
     .then(response => {
       document.location.reload();
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      alert('Ошибка создания доклада. Попробуйте еще раз.');
+      saveReportButton.disabled = true;
+      console.log(error)
+    });
 }
 
 // Удаление докладов
