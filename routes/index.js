@@ -110,32 +110,28 @@ router.get('/logout', (req, res, next) => {
 
 // Reports
 router.post('/report', auth, async (req, res) => {
-  const report = req.files.file;
+  let report = null;
+  let fileName = null;
   const { title, annotation } = req.body;
-
   
   if (!title) {
     return res.status(400).send('Введите название доклада');
   }
   
-  if (!annotation) {
-    return res.status(400).send('Введите аннотацию');
-  }
-  
-  if (!report) {
-    return res.status(400).send('Прикрепита файл доклада');
-  }
+  if (req.files && req.files.file) {
+    report = req.files.file;
 
-  const fileExtension = report.name.split('.').pop();
+    const fileExtension = report.name.split('.').pop();
+
+    // Название файла: id + оригинальное расширение
+    fileName = `${uuid.v4()}.${fileExtension}`;
     
-  // Название файла: id + оригинальное расширение
-  const fileName = `${uuid.v4()}.${fileExtension}`;
-
-  // Сохранение файла
-  try {
-    report.mv(path.join(__dirname, '..', 'public', 'reports', fileName));
-  } catch(error) {
-    return res.status(400).send('Ошибка сохранения файла. Попробуйте еще раз');
+    // Сохранение файла
+    try {
+      report.mv(path.join(__dirname, '..', 'public', 'reports', fileName));
+    } catch(error) {
+      return res.status(400).send('Ошибка сохранения файла. Попробуйте еще раз');
+    }
   }
 
   const data = {};
@@ -144,7 +140,7 @@ router.post('/report', auth, async (req, res) => {
   data.user = req.user._id;
   data.title = title;
   data.annotation = annotation;
-  data.file = `/reports/${fileName}`;
+  data.file = fileName ? `/reports/${fileName}` : null;
 
   try {
     await Mongo.reports.insertOne(data);

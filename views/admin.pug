@@ -15,7 +15,8 @@ block content
                   p.annotation #{report.annotation}
                   p.user #{report.user}
                 div.buttons
-                  a.button(href=report.file target="_blank") Открыть файл
+                  if report.file
+                    a.button(href=report.file target="_blank") Открыть файл
                   button.button.remove-button(data-id=report._id) Удалить
   script(src="/scripts/admin.js") 
                 

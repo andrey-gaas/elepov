@@ -64,16 +64,6 @@ saveReportButton.onclick = function(event) {
     hasError = true;
   }
 
-  if (!annotationReportField.value) {
-    alert('Введите аннотацию');
-    hasError = true;
-  }
-
-  if (!fileReport.value) {
-    alert('Добавьте файл');
-    hasError = true;
-  }
-
   if (hasError) return false;
 
   const formData = new FormData(reportForm);
