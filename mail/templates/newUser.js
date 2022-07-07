@@ -1,4 +1,4 @@
-module.exports = function(name, organization, email, password) {
+module.exports = function(name, organization, position, educatuin, city, form, email, password) {
   return `
   <html>
   <head>
@@ -10,6 +10,10 @@ module.exports = function(name, organization, email, password) {
     <p><b>Данные пользователя:</b><p/>
     <p>ФИО: ${name}</p>
     <p>Организация: ${organization}</p>
+    <p>Должность: ${position}</p>
+    <p>Ученая степень: ${educatuin}</p>
+    <p>Город: ${city}</p>
+    <p>Форма участия: ${form}</p>
     <p>Email: ${email}</p>
     <p>Пароль: ${password}</p>
   </body>

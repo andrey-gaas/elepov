@@ -9,12 +9,30 @@ block content
         form(action="/registration" method="post").form
           input(type="text" name="name" placeholder="ФИО")
           span.error
+
           input(type="text" name="organization" placeholder="Организация")
           span.error
+
+          input(type="text" name="position" placeholder="Должность")
+          span.error
+
+          input(type="text" name="educatuin" placeholder="Ученая степень")
+          span.error
+
+          input(type="text" name="city" placeholder="Город")
+          span.error
+
+          select(name="form" placeholder="Форма участия" selected="")
+            option(value="очная") Очная форма участия
+            option(value="заочная") Заочная форма участия
+          span.error
+
           input(type="email" name="email" placeholder="E-Mail")
           span.error
+
           input(type="password" name="password" placeholder="Пароль")
           span.error
+
           div.checkbox
             input(type="checkbox" name="checkbox")#checkbox
             label(for="checkbox") Согласие на обработку персональных данных

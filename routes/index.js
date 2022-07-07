@@ -60,10 +60,14 @@ router.get('/admin', auth, async (req, res, next) => {
 
 // Handle data
 router.post('/registration', async (req, res) => {
-  const { name, organization, email, password, checkbox } = req.body;
+  const { name, organization, position, educatuin, city, form, email, password, checkbox } = req.body;
 
   if (!name || !name.length) return res.render('registration', { error: 'Введите ФИО' });
   if (!organization || !organization.length) return res.render('registration', { error: 'Введите название организации' });
+  if (!position || !position.length) return res.render('registration', { error: 'Укажите вашу должность' });
+  if (!educatuin || !educatuin.length) return res.render('registration', { error: 'Укажите ученую степень' });
+  if (!city || !city.length) return res.render('registration', { error: 'Укажите город' });
+  if (!form || !form.length) return res.render('registration', { error: 'Выберите форму участия' });
   if (!validator.validate(email)) return res.render('registration', { error: 'Введите корректный Email' });
   if (!password || !password.length || password.length < 6 || password.length > 20) return res.render('registration', { error: 'Пароль должен содержать от 6 до 20 символов' });
   if (checkbox !== 'on') return res.render('registration', { error: 'Для регистрации необходимо согласие на обработку персональных данных' });
@@ -78,7 +82,7 @@ router.post('/registration', async (req, res) => {
   }
 
   try {
-    const result = await Mongo.users.insertOne({ _id: email, name, organization, email, password });
+    const result = await Mongo.users.insertOne({ _id: email, name, organization, position, educatuin, city, form, email, password });
     
     req.logIn({ email, password }, function(err) {
       return err
@@ -106,7 +110,7 @@ router.post('/registration', async (req, res) => {
       email: 'stukalova@gpntbsib.ru',
       subject: "Регистрация нового участника",
       text: "",
-    }, require('../mail/templates/newUser')(name, organization, email, password));
+    }, require('../mail/templates/newUser')(name, organization, position, educatuin, city, form, email, password));
   } catch(error) {
     console.log(error);
   }

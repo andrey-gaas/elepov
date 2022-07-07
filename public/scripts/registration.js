@@ -3,6 +3,10 @@ const form = document.querySelector('form');
 form.onsubmit = async function(event) {
   const name = document.querySelector('input[name=name]');
   const organization = document.querySelector('input[name=organization]');
+  const position = document.querySelector('input[name=position]');
+  const educatuin = document.querySelector('input[name=educatuin]');
+  const city = document.querySelector('input[name=city]');
+  const form = document.querySelector('input[name=form]');
   const email = document.querySelector('input[name=email]');
   const password = document.querySelector('input[name=password]');
   const checkbox = document.querySelector('input[name=checkbox]');
@@ -18,7 +22,35 @@ form.onsubmit = async function(event) {
   if (!organization.value.length) {
     const error = organization.nextSibling;
     error.classList.add('show');
-    error.innerHTML = 'Введите название организации';
+    error.innerHTML = 'Укажите название организации';
+    hasError = true;
+  }
+
+  if (!position.value.length) {
+    const error = position.nextSibling;
+    error.classList.add('show');
+    error.innerHTML = 'Укажите вашу должность';
+    hasError = true;
+  }
+
+  if (!educatuin.value.length) {
+    const error = educatuin.nextSibling;
+    error.classList.add('show');
+    error.innerHTML = 'Укажите ученую степень';
+    hasError = true;
+  }
+
+  if (!city.value.length) {
+    const error = city.nextSibling;
+    error.classList.add('show');
+    error.innerHTML = 'Укажите город';
+    hasError = true;
+  }
+
+  if (!form.value.length) {
+    const error = form.nextSibling;
+    error.classList.add('show');
+    error.innerHTML = 'Выберите форму участия';
     hasError = true;
   }
 

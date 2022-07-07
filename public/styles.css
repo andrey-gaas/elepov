@@ -648,16 +648,12 @@ ul.list li::marker {
 #registration-page .form {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
-}
-@media (min-width: 1200px) {
-  #registration-page .form {
-    margin-top: 140px;
-  }
+  margin-top: 40px;
 }
 #registration-page .form input[type=text],
 #registration-page .form input[type=email],
-#registration-page .form input[type=password] {
+#registration-page .form input[type=password],
+#registration-page .form select {
   margin-top: 20px;
   font-family: "Nunito";
   font-size: 12px;
@@ -667,19 +663,22 @@ ul.list li::marker {
 }
 #registration-page .form input[type=text]:focus,
 #registration-page .form input[type=email]:focus,
-#registration-page .form input[type=password]:focus {
+#registration-page .form input[type=password]:focus,
+#registration-page .form select:focus {
   color: #406882;
   border-bottom-color: #406882;
 }
 #registration-page .form input[type=text].error,
 #registration-page .form input[type=email].error,
-#registration-page .form input[type=password].error {
+#registration-page .form input[type=password].error,
+#registration-page .form select.error {
   border-color: red;
 }
 @media (min-width: 1200px) {
   #registration-page .form input[type=text],
 #registration-page .form input[type=email],
-#registration-page .form input[type=password] {
+#registration-page .form input[type=password],
+#registration-page .form select {
     font-size: 14px;
   }
 }
