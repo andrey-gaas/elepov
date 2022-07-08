@@ -65,7 +65,6 @@ router.post('/registration', async (req, res) => {
   if (!name || !name.length) return res.render('registration', { error: 'Введите ФИО' });
   if (!organization || !organization.length) return res.render('registration', { error: 'Введите название организации' });
   if (!position || !position.length) return res.render('registration', { error: 'Укажите вашу должность' });
-  if (!educatuin || !educatuin.length) return res.render('registration', { error: 'Укажите ученую степень' });
   if (!city || !city.length) return res.render('registration', { error: 'Укажите город' });
   if (!form || !form.length) return res.render('registration', { error: 'Выберите форму участия' });
   if (!validator.validate(email)) return res.render('registration', { error: 'Введите корректный Email' });

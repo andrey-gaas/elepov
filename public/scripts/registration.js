@@ -33,13 +33,6 @@ form.onsubmit = async function(event) {
     hasError = true;
   }
 
-  if (!educatuin.value.length) {
-    const error = educatuin.nextSibling;
-    error.classList.add('show');
-    error.innerHTML = 'Укажите ученую степень';
-    hasError = true;
-  }
-
   if (!city.value.length) {
     const error = city.nextSibling;
     error.classList.add('show');
