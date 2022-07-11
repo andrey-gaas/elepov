@@ -1024,3 +1024,63 @@ ul.list li::marker {
   margin-top: 20px;
   padding: 5px 10px;
 }
+
+#admin-users h1.title {
+  margin-top: 40px;
+  font-size: 36px;
+  text-align: center;
+}
+#admin-users p.text {
+  margin-top: 40px;
+  font-size: 24px;
+  text-align: center;
+}
+#admin-users .back-link {
+  font-size: 24px;
+  font-family: "Nunito";
+  text-decoration: none;
+}
+#admin-users .button {
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 5px 10px;
+}
+#admin-users .users-list {
+  margin-top: 40px;
+}
+#admin-users .users-list .user {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #eee;
+  border-radius: 15px;
+}
+#admin-users .users-list .user:first-child {
+  margin-top: 0;
+}
+#admin-users .users-list .user .name {
+  font-family: "Nunito";
+  font-size: 24px;
+}
+#admin-users .users-list .user .info-container {
+  margin-top: 10px;
+  font-family: "Nunito";
+  font-size: 18px;
+  color: #777;
+}
+#admin-users .users-list .user .info-container span {
+  margin-left: 40px;
+  font-family: "Nunito";
+  font-size: 18px;
+  color: #777;
+}
+#admin-users .users-list .user .info-container span:first-child {
+  margin-left: 0;
+}
+#admin-users .users-list .buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}

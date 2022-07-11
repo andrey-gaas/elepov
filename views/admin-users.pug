@@ -1,0 +1,24 @@
+extends layouts/main_layouts
+
+block content
+  div#admin-users
+    .container
+      h1.title Список участников
+      a(href="/admin").button.reverse.back-link Назад
+      if users.length == 0
+        p.text Список участников пуст
+      if users.length > 0
+        div.users-list
+          each user in users
+              .user
+                p.name #{user.name}
+                p.info-container
+                  span #{user.city}
+                  span #{user.organization}
+                  span #{user.position}
+                p.info-container
+                  span Email: #{user.email}
+                p.info-container
+                  span Форма участия: #{user.form}
+  script(src="/scripts/admin.js")
+                

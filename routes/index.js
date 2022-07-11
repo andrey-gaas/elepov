@@ -66,9 +66,28 @@ router.get('/admin/reports', auth, async (req, res, next) => {
   res.render('admin-reports', { reports, user: req.user });
 });
 
+router.get('/admin/users', auth, async (req, res, next) => {
+  if (!req.user.admin) {
+    return res.redirect('/profile');
+  }
+
+  let users = null;
+
+  try {
+    users = await Mongo
+      .users
+      .find({})
+      .toArray();
+  } catch(error) {
+    return res.status(500).send('Ошибка сервера');
+  }
+
+  res.render('admin-users', { users, user: req.user });
+});
+
 // Handle data
 router.post('/registration', async (req, res) => {
-  const { name, organization, position, educatuin, city, form, email, password, checkbox } = req.body;
+  const { name, organization, position, education, city, form, email, password, checkbox } = req.body;
 
   if (!name || !name.length) return res.render('registration', { error: 'Введите ФИО' });
   if (!organization || !organization.length) return res.render('registration', { error: 'Введите название организации' });
@@ -89,7 +108,7 @@ router.post('/registration', async (req, res) => {
   }
 
   try {
-    const result = await Mongo.users.insertOne({ _id: email, name, organization, position, educatuin, city, form, email, password });
+    const result = await Mongo.users.insertOne({ _id: email, name, organization, position, education, city, form, email, password });
     
     req.logIn({ email, password }, function(err) {
       return err
@@ -117,7 +136,7 @@ router.post('/registration', async (req, res) => {
       email: 'stukalova@gpntbsib.ru',
       subject: "Регистрация нового участника",
       text: "",
-    }, require('../mail/templates/newUser')(name, organization, position, educatuin, city, form, email, password));
+    }, require('../mail/templates/newUser')(name, organization, position, education, city, form, email, password));
   } catch(error) {
     console.log(error);
   }

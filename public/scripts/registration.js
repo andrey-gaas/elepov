@@ -4,7 +4,6 @@ form.onsubmit = async function(event) {
   const name = document.querySelector('input[name=name]');
   const organization = document.querySelector('input[name=organization]');
   const position = document.querySelector('input[name=position]');
-  const educatuin = document.querySelector('input[name=educatuin]');
   const city = document.querySelector('input[name=city]');
   const form = document.querySelector('input[name=form]');
   const email = document.querySelector('input[name=email]');

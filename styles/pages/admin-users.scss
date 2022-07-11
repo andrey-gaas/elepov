@@ -1,0 +1,72 @@
+#admin-users {
+  h1.title {
+    margin-top: 40px;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  p.text {
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .back-link {
+    font-size: 24px;
+    font-family: $title_font;
+    text-decoration: none;
+  }
+
+  .button {
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 5px 10px;
+  }
+
+  .users-list {
+    margin-top: 40px;
+
+    .user {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 2px solid #eee;
+      border-radius: 15px;
+      
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .name {
+        font-family: $title_font;
+        font-size: 24px;
+      }
+
+      .info-container {
+        margin-top: 10px;
+        font-family: $title_font;
+        font-size: 18px;
+        color: #777;
+
+        span {
+          margin-left: 40px;
+          font-family: $title_font;
+          font-size: 18px;
+          color: #777;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+    }
+  }
+}
