@@ -957,50 +957,69 @@ ul.list li::marker {
   padding: 5px 10px;
 }
 
-#admin-page h1.title {
+#admin-menu h1.title {
+  margin-top: 60px;
+  font-size: 36px;
+  text-align: center;
+}
+#admin-menu .nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+#admin-menu .nav a {
+  margin-top: 40px;
+}
+
+#admin-reports h1.title {
   margin-top: 40px;
   font-size: 36px;
   text-align: center;
 }
-#admin-page p.text {
+#admin-reports p.text {
   margin-top: 40px;
   font-size: 24px;
   text-align: center;
 }
-#admin-page .reports-list {
+#admin-reports .back-link {
+  font-size: 24px;
+  font-family: "Nunito";
+  text-decoration: none;
+}
+#admin-reports .reports-list {
   margin-top: 40px;
 }
-#admin-page .reports-list .report {
+#admin-reports .reports-list .report {
   display: flex;
   margin-top: 20px;
   padding: 20px;
   border: 2px solid #eee;
   border-radius: 15px;
 }
-#admin-page .reports-list .report:first-child {
+#admin-reports .reports-list .report:first-child {
   margin-top: 0;
 }
-#admin-page .reports-list .report .title {
+#admin-reports .reports-list .report .title {
   font-family: "Nunito";
   font-size: 26px;
 }
-#admin-page .reports-list .report .annotation {
+#admin-reports .reports-list .report .annotation {
   margin-top: 20px;
   font-family: "Nunito";
   font-size: 18px;
 }
-#admin-page .reports-list .report .user {
+#admin-reports .reports-list .report .user {
   margin-top: 20px;
   font-family: "Nunito";
   font-size: 18px;
   color: #666;
 }
-#admin-page .reports-list .buttons {
+#admin-reports .reports-list .buttons {
   display: flex;
   flex-direction: column;
   margin-left: auto;
 }
-#admin-page .button {
+#admin-reports .button {
   align-self: flex-start;
   margin-top: 20px;
   padding: 5px 10px;

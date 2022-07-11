@@ -1,0 +1,23 @@
+extends layouts/main_layouts
+
+block content
+  div#admin-reports
+    .container
+      h1.title Список докладов
+      a(href="/admin").button.reverse.back-link Назад
+      if reports.length == 0
+        p.text Список докладов пуст
+      if reports.length > 0
+        div.reports-list
+          each report in reports
+              .report
+                div
+                  p.title #{report.title}
+                  p.annotation #{report.annotation}
+                  p.user #{report.user.name}, #{report.user.organization}, #{report.user.email}
+                div.buttons
+                  if report.file
+                    a.button(href=report.file target="_blank") Открыть файл
+                  button.button.remove-button(data-id=report._id) Удалить
+  script(src="/scripts/admin.js") 
+                

@@ -39,7 +39,15 @@ router.get('/profile', auth, async (req, res) => {
   res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
 });
 
-router.get('/admin', auth, async (req, res, next) => {
+router.get('/admin', auth, (req, res) => {
+  if (!req.user.admin) {
+    return res.redirect('/profile');
+  }
+
+  res.render('admin', { user: req.user });
+});
+
+router.get('/admin/reports', auth, async (req, res, next) => {
   if (!req.user.admin) {
     return res.redirect('/profile');
   }
@@ -55,7 +63,7 @@ router.get('/admin', auth, async (req, res, next) => {
     return res.status(500).send('Ошибка сервера');
   }
 
-  res.render('admin', { reports, user: req.user });
+  res.render('admin-reports', { reports, user: req.user });
 });
 
 // Handle data

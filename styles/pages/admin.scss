@@ -1,59 +1,17 @@
-#admin-page {
+#admin-menu {
   h1.title {
-    margin-top: 40px;
+    margin-top: 60px;
     font-size: 36px;
     text-align: center;
   }
 
-  p.text {
-    margin-top: 40px;
-    font-size: 24px;
-    text-align: center;
-  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
 
-  .reports-list {
-    margin-top: 40px;
-
-    .report {
-      display: flex;
-      margin-top: 20px;
-      padding: 20px;
-      border: 2px solid #eee;
-      border-radius: 15px;
-      
-      &:first-child {
-        margin-top: 0;
-      }
-
-      .title {
-        font-family: $title_font;
-        font-size: 26px;
-      }
-
-      .annotation {
-        margin-top: 20px;
-        font-family: $title_font;
-        font-size: 18px;
-      }
-
-      .user {
-        margin-top: 20px;
-        font-family: $title_font;
-        font-size: 18px;
-        color: #666;
-      }
+    a {
+      margin-top: 40px;
     }
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-    }
-  }
-
-  .button {
-    align-self: flex-start;
-    margin-top: 20px;
-    padding: 5px 10px;
   }
 }
