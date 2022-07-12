@@ -72,6 +72,7 @@ saveReportButton.onclick = function(event) {
     body: formData,
   })
     .then(response => {
+      alert('Доклад успешно создан!');
       document.location.reload();
     })
     .catch(error => {

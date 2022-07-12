@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
 router.get('/profile', auth, async (req, res) => {
   const reports = await Mongo
     .reports
-    .find({ user: req.user._id })
+    .find({ 'user._id': req.user._id })
     .toArray();
 
   res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
