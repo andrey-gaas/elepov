@@ -28,4 +28,8 @@ mixin header()
           a(href="/profile") Личный кабинет
           div
           a(href="/logout").gray Выход
+        
+      div.langs-container
+        a(href=`/lang?lang=ru&page=${page}`) Ru
+        a(href=`/lang?lang=en&page=${page}`).gray En
 

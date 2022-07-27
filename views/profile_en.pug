@@ -1,16 +1,16 @@
-extends layouts/main_layouts
+extends layouts/layout_en
 
 block content
   div#profile-page
     .container.narrow
       .paper
-        h1.title Личная информация
+        h1.title Personal information
         div.info#name-field
-          label.title Фамилия Имя Отчество
+          label.title Full Name
           input(type="text" value=`${user.name}` name="name" disabled).data
           button.btn
         div.info#organization-field
-          label.title Организация
+          label.title Organization
           input(type="text" value=`${user.organization}` name="organization" disabled).data
           button.btn
         div.info#email-field
@@ -18,23 +18,23 @@ block content
           input(type="text" value=`${user.email}` name="email" disabled).data
       if reports.length > 0
         .paper
-          h1.title Мои доклады
+          h1.title My reports
           .reports-list 
             each report in reports
               .report 
                 span.title #{report.title}
-                button.button.remove-button(data-id=report._id) Удалить
+                button.button.remove-button(data-id=report._id) Remove
       .paper
-        h1.title Добавить доклад
+        h1.title Add report
         form(action="/report" method="post")#report-form
           div.info
-            label(for="title").title Название доклада
+            label(for="title").title Title
             input(type="text" name="title")#title.data
           div.info
-            label(for="annotation").title Аннотация
+            label(for="annotation").title Annotation
             textarea(type="text" name="annotation")#annotation.data
           .buttons 
             input(type="file" name="file")#file
-            label(for="file").button Прикрепить файл
-            button(type="button").button#save Сохранить
+            label(for="file").button Attach file
+            button(type="button").button#save Save
   script(src="/scripts/profile.js") 

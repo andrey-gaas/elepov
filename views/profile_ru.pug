@@ -1,0 +1,40 @@
+extends layouts/layout_ru
+
+block content
+  div#profile-page
+    .container.narrow
+      .paper
+        h1.title Личная информация
+        div.info#name-field
+          label.title Фамилия Имя Отчество
+          input(type="text" value=`${user.name}` name="name" disabled).data
+          button.btn
+        div.info#organization-field
+          label.title Организация
+          input(type="text" value=`${user.organization}` name="organization" disabled).data
+          button.btn
+        div.info#email-field
+          label.title Email
+          input(type="text" value=`${user.email}` name="email" disabled).data
+      if reports.length > 0
+        .paper
+          h1.title Мои доклады
+          .reports-list 
+            each report in reports
+              .report 
+                span.title #{report.title}
+                button.button.remove-button(data-id=report._id) Удалить
+      .paper
+        h1.title Добавить доклад
+        form(action="/report" method="post")#report-form
+          div.info
+            label(for="title").title Название доклада
+            input(type="text" name="title")#title.data
+          div.info
+            label(for="annotation").title Аннотация
+            textarea(type="text" name="annotation")#annotation.data
+          .buttons 
+            input(type="file" name="file")#file
+            label(for="file").button Прикрепить файл
+            button(type="button").button#save Сохранить
+  script(src="/scripts/profile.js") 

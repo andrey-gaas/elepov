@@ -49,7 +49,6 @@ header.header > .container {
 }
 @media (min-width: 1200px) {
   header.header > .container {
-    justify-content: flex-start;
     height: 70px;
   }
 }
@@ -104,11 +103,7 @@ header.header nav.nav div {
 header.header .auth-container {
   display: flex;
   align-items: center;
-}
-@media (min-width: 1200px) {
-  header.header .auth-container {
-    margin-left: auto;
-  }
+  margin-left: auto;
 }
 header.header .auth-container a {
   font-family: "Nunito";
@@ -133,6 +128,28 @@ header.header .auth-container div {
   header.header .auth-container div {
     margin: 0 20px;
   }
+}
+header.header .langs-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+header.header .langs-container a {
+  font-family: "Nunito";
+  font-size: 14px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+header.header .langs-container a:first-child {
+  margin-left: 0;
+}
+@media (min-width: 1200px) {
+  header.header .langs-container a {
+    font-size: 18px;
+  }
+}
+header.header .langs-container a.gray {
+  color: #BDBDBD;
 }
 
 button.button,

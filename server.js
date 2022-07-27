@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const fileUpload = require("express-fileupload");
+const cookieParser = require('cookie-parser')
 const app = express();
 const router = require('./routes');
 const Mongo = require('./db');
@@ -14,6 +15,7 @@ app.set('view engine', 'pug')
 app.use(require('express-session')({ secret: 'great library', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));
 

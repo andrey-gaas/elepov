@@ -1,0 +1,15 @@
+extends layouts/layout_ru
+
+block content
+  div#login-page
+    .container.narrow
+      .paper
+        h1.title Вход
+        h2.error #{error}
+        form(action="/login" method="post").form
+          input(type="email" name="email" placeholder="E-Mail")
+          span.error
+          input(type="password" name="password" placeholder="Пароль")
+          span.error
+          button(type="submit").button Войти
+  script(src="/scripts/login.js") 

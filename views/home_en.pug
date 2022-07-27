@@ -1,0 +1,93 @@
+extends layouts/layout_en
+
+block content
+  div#home-page
+    header.top-container
+      .container
+        .description
+          h1 Personal Book Collections and Archives in Libraries (the 80th Anniversary of the Birthday of Dr. Boris S. Elepov)"
+          p
+            | It is our pleasure to invite you to participate in the International Scientific and Practical Conference
+            | "Personal Book Collections and Archives in Libraries (the 80th Anniversary of the Birthday of Dr. Boris S. Elepov)",
+            | which will be held as part of the 65th anniversary of the Siberian Branch of Russian Academy of Sciences on
+            | September 14-15, 2022 in Novosibirsk in hybrid format at Voskhod str, 15.
+          .buttons
+            a(href="#").button About Conference
+            a(href="/biography").button.reverse About Dr. Boris S. Elepov
+        .photo
+          img(src="/images/photo-1.jpg" alt="Б.С. Елепов" width="100%")
+    section.about#about
+      .container.narrow
+        h2.title About Conference
+        .about-container
+          p
+            | The conference programme includes sessions and round tables related to significant issues of book culture and library activities:
+          ul.list
+            li Relevant problems related to study of personal book collections in libraries: conceptual apparatus, methodology, approaches.
+            li Book heritage: study, preservation and promotion.
+            li The study of personal book collections in the context of international communications.
+            li Personal book collections in libraries: history of receipt, questions of research and use.
+            li Books and bookplates from personal book collections.
+            li Experience in media representation of personal libraries.
+            li The role of the leader's personality in the development of the library and certain areas of its activities. The study of scientific schools based on publications.
+            li Memorial libraries and complexes: book collections and memorial expositions.
+
+    section.programm#programm
+      .container
+        h2.title Programme
+        div.cards-container
+          article.card
+            span.number 01
+            p.text Grand Opening
+          article.card
+            span.number 02
+            p.text Plenary Session
+          article.card
+            span.number 03
+            p.text Scientific Programme
+          article.card
+            span.number 04
+            p.text Methodological seminar for the SB RAS’s libraries
+        section
+          h2.title Related Events
+          div.container.narrow
+            ul.list
+              li Exhibition of Dr. Boris S. Elepov's publications (virtual and real)
+              li Photo Exhibition
+              li Full-text database on the website page: https://elepov.gpntbsib.ru/ 
+    section.registration#registration
+      .container.narrow
+        h2.title Participation
+        ul.list
+          li Author registration deadline - September 1, 2022;
+          li The best papers will be selected by the Program Committee for publication in the scientific peer-reviewed journals "Bibliosphere" (RSCI, Higher Attestation Commission (VAK)) and "Proceedings of the SPSTL SB RAS" (RSCI)
+        a(href="/registration").button.reverse Register Now
+    section.organizers#organizers
+      .container
+        h2.title Conference Organizers
+        .organizers-list
+          img(src="/images/so_ran.svg" alt="СО РАН").logo
+          img(src="/images/gpntb.svg" alt="ГПНТБ").logo
+          img(src="/images/rntb.svg" alt="РНТБ").logo
+          img(src="/images/nloa.svg" alt="NLOA").logo
+    section.contacts#contacts
+      .container
+        h2.title Coordinators
+        .cards
+          div.card-wrapper
+            span.person-description For Russian specialists:
+            .card
+              img(src="/images/mahotina_n_v.png" alt="Махотина Наталья Витальевна")
+              span.name Natalya Makhotina
+              span Deputy Director for Library Work State Public Scientific and Technical Library of the SB RAS 
+              a(href="tel:+73833730653").phone +7 (383) 373-06-53
+              a(href="mailto:makhotina@spsl.nsc.ru").email makhotina@spsl.nsc.ru
+          
+          div.card-wrapper
+            span.person-description For foreign specialists:
+            .card
+              img(src="/images/pshenichnaya_e_v.png" alt="Пшеничная Евгения Владимировна")
+              span.name Evgeniya Pshenichnaya
+              span Assistant Director for International Relations Assistant Director for International Relations
+              a(href="tel:+73833730651").phone +7 (383) 373-06-51
+              a(href="mailto:pshenichnaya@spsl.nsc.ru").email pshenichnaya@spsl.nsc.ru

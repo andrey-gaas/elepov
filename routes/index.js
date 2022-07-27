@@ -10,24 +10,63 @@ const sendMail = require('../mail/sendMail');
 
 const router = new Router();
 
+
+router.use('*', (req, res, next) => {
+  if (!req.cookies.lang) {
+    req.lang = 'ru';
+    res.cookie('lang', 'ru', { maxAge: 900000, httpOnly: true });
+  } else {
+    req.lang = req.cookies.lang;
+  }
+  next();
+});
+
 // PAGES
 
 router.get('/', (req, res) => {
-  res.render('home', { user: req.user, title: 'К 80-летию Б.С. Елепова', page: 'home' });
+  res.render(
+    `home_${req.lang}`,
+    {
+      user: req.user,
+      title: req.lang === 'ru' ? 'К 80-летию Б.С. Елепова' : 'To the 80th anniversary of B.S. Elepov',
+      page: 'home',
+    },
+  );
 });
 
 router.get('/biography', (req, res) => {
-  res.render('biography', { user: req.user, title: 'Биография Б.С. Елепова', page: 'biography' });
+  res.render(
+    `biography_${req.lang}`,
+    {
+      user: req.user,
+      title: req.lang === 'ru' ? 'Биография Б.С. Елепова' : 'Biography of B.S. Elepov',
+      page: 'biography'
+    },
+  );
 });
 
 router.get('/registration', (req, res) => {
   if (req.isAuthenticated()) return res.redirect('/profile');
-  res.render('registration', { title: 'Регистрация' });
+
+  res.render(
+    `registration_${req.lang}`,
+    {
+      title: req.lang === 'ru' ? 'Регистрация' : 'Sign Up',
+      page: 'reginstration'
+    },
+  );
 });
 
 router.get('/login', (req, res) => {
   if (req.isAuthenticated()) return res.redirect('/profile');
-  res.render('login', { title: 'Вход' });
+
+  res.render(
+    `login_${req.lang}`,
+    {
+      title: req.lang === 'ru' ? 'Вход' : 'Sign In',
+      page: 'login',
+    },
+  );
 });
 
 router.get('/profile', auth, async (req, res) => {
@@ -36,7 +75,15 @@ router.get('/profile', auth, async (req, res) => {
     .find({ 'user._id': req.user._id })
     .toArray();
 
-  res.render('profile', { title: 'Личный кабинет', user: req.user, reports });
+  res.render(
+    `profile_${req.lang}`,
+    {
+      title: req.lang === 'ru' ? 'Личный кабинет' : 'Personal Area',
+      user: req.user,
+      reports,
+      page: 'profile',
+    },
+  );
 });
 
 router.get('/admin', auth, (req, res) => {
@@ -83,6 +130,17 @@ router.get('/admin/users', auth, async (req, res, next) => {
   }
 
   res.render('admin-users', { users, user: req.user });
+});
+
+router.get('/lang', (req, res) => {
+  let { lang, page } = req.query;
+  res.cookie('lang', lang, { maxAge: 900000, httpOnly: true });
+
+  if (page === 'home') {
+    page = '';
+  }
+
+  res.redirect(`/${page}`);
 });
 
 // Handle data

@@ -1,0 +1,35 @@
+mixin header()
+  header.header
+    .container
+      a(href="/")
+        img(src="/images/logo.svg" alt="К 80-летию Б.С. Елепова").logo
+
+      nav.nav
+          if page == 'home'
+            a(href="#about") About Conference
+            a(href="#programm") Programme
+            a(href="#registration") Register
+            a(href="#organizers") Organizers
+            a(href="#contacts") Contact
+          
+          if page == 'biography'
+            a(href="/biography") <b>Biography of B.S. Elepov</b>
+            div
+            a(href="/") Go home
+
+      if !user
+        div.auth-container
+          a(href="/registration") Sign Up
+          div
+          a(href="/login") Sign In
+      
+      if user 
+        div.auth-container
+          a(href="/profile") Personal Area
+          div
+          a(href="/logout").gray Log Out
+        
+      div.langs-container
+        a(href=`/lang?lang=ru&page=${page}`) Ru
+        a(href=`/lang?lang=en&page=${page}`).gray En
+

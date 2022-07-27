@@ -1,0 +1,42 @@
+extends layouts/layout_en
+
+block content
+  div#registration-page
+    .container.narrow
+      .paper
+        h1.title Sign Up
+        h2.error #{error}
+        form(action="/registration" method="post").form
+          input(type="text" name="name" placeholder="Full Name")
+          span.error
+
+          input(type="text" name="organization" placeholder="Organization")
+          span.error
+
+          input(type="text" name="position" placeholder="Position")
+          span.error
+
+          input(type="text" name="education" placeholder="Education (not necessary)")
+          span.error
+
+          input(type="text" name="city" placeholder="City")
+          span.error
+
+          select(name="form" placeholder="Participation form" selected="")
+            option(value="очная") Full-time participation
+            option(value="заочная") Correspondence form of participation
+          span.error
+
+          input(type="email" name="email" placeholder="E-Mail")
+          span.error
+
+          input(type="password" name="password" placeholder="Password")
+          span.error
+
+          div.checkbox
+            input(type="checkbox" name="checkbox")#checkbox
+            label(for="checkbox") Consent to the processing of personal data
+          button(type="submit").button Register
+          span.error
+  
+  script(src="/scripts/registration.js") 
